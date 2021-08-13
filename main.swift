@@ -4,6 +4,7 @@ import Foundation
 func main(){
   let menuPrincipal = Menu()
   var almacen = Almacen()
+  var carrito = Carrito()
   
 
 
@@ -41,7 +42,10 @@ func main(){
     almacen.addProducto(producto:quesoLaVilla, cantidad: 10)
     almacen.addProducto(producto:shirt,cantidad:15)
     almacen.addProducto(producto:short,cantidad:45)
-    
+
+/// PRODUCTOS AGREGADOS AL CARRITO
+    carrito.addCarrito(producto: short, cantidad:10)
+    carrito.addCarrito(producto:pants, cantidad: 5)
 
 /// MOSTRAR ALMACEN ///
 print("---------------------------------------------")
@@ -50,17 +54,18 @@ almacen.showProdc()
 
 /// PRODUCTOS RETIRADOS DEL ALMACEN 
     almacen.removeProducto(producto:short,cantidad:10)
+    almacen.removeProducto(producto:pants, cantidad:5)
+
+
+/// PRODUCTOS EN EL CARRITO 
+print("---------------------------------------------\n")
+print("->____________Productos en el carrito____________<-")
+carrito.showProdc()
 
 /// ALMACEN ACTUALIZADO 
 print("---------------------------------------------")
 print("->____________el almacen actual____________<-")
 almacen.showProdc()
-
-/// PRODUCTOS EN EL CARRITO 
-print("---------------------------------------------\n")
-print("->____________Productos en el carrito____________<-")
-
-
     
 }
 
